@@ -1,11 +1,10 @@
-class Man {
+class Person {
     constructor(name) {
         this._name = name;
         this._partner = [];
-        this._gender="man";
     }
     getMarry(other) {
-        if (this._gender!==other._gender) {
+        if (this.constructor!==other.constructor) {
             if ( (this._partner.length == 0) && (other._partner.length == 0) ) {
                 this._partner.push(other);
                 other._partner.push(this);
@@ -22,11 +21,15 @@ class Man {
         return this._partner.includes(other);
     }
 }
-
-class Woman extends Man {
+class Man extends Person {
     constructor(name) {
         super(name);
-        this._gender="woman";
+    }
+}
+
+class Woman extends Person {
+    constructor(name) {
+        super(name);
     }
 }
 

@@ -1,6 +1,15 @@
 'use strict';
+function getArrayReverse(a) {
+    let count = a.length-1;
+    for (let i = 0; i <= Math.floor(count/2); i++) {
+        let t  =  a[count-i];
+        a[count-i]=a[i];
+        a[i] = t;
+    }
+    return a;
+}
 function getArraySwap(a) {
-    a=a.reverse();
+    getArrayReverse(a);
     const even = a.length % 2 === 0,
         left = (even)?Math.floor(a.length / 2):Math.floor(a.length / 2)+1;
     for (let iStart=0, iEnd=left; iStart<=left && iEnd<a.length; iStart++, iEnd++) {
@@ -20,4 +29,4 @@ function getArrayRandom(min, max, n) {
     return a;
 }
 
-console.log(getArraySwap(getArrayRandom(0,10,5)));
+console.log(getArraySwap(getArrayRandom(0,10,4)));
