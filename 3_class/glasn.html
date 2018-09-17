@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Подсчет гласных</title>
+    <style>
+        input[type=button] {
+            padding: 10px 20px;
+        }
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Подсчет гласных</h1>
+<input type='button' value='Ввести слово' onclick='javascript:viewCount()'>
+<script>
+    function vowelCount(str) {
+        return str.replace(/[^ауоеияюёэы]/ig, "").length;
+    }
+    function viewCount() {
+        let str=prompt('Введите строку:')||"";
+        console.log("Количество гласных: "+vowelCount(str));
+    }
+</script>
+</body>
+</html>
