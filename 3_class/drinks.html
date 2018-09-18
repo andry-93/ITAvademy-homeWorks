@@ -19,5 +19,45 @@
 <input type='button' value='Удалить информацию о напитке' onclick='javascript:htmlDeleteValue()'>
 <input type='button' value='Перечень всех напитков' onclick='javascript:htmlAllValue()'>
 <script src="drinks.js"></script>
+<script>
+    function htmlAddValue() {
+        let drink = prompt('Введите название напитка:')||" ",
+            alcohol = confirm('Этот напиток алкогольный?')||false,
+            recipe = prompt('Введите рецепт напитка:')||" ";
+        drinkStorage.addValue(drink, {'alcohol': alcohol, 'recipe': recipe});
+    }
+    function htmlGetValue() {
+        let drink = prompt('Введите название напитка:'),
+            drinkObj=drinkStorage.getValue(drink);
+        if (typeof drinkObj  !== 'undefined') {
+            console.log(`
+        напиток: ${drink}
+        алкогольный: ${drinkStorage.hash[drink]["alcohol"]}
+        рецепт приготовления: ${drinkStorage.hash[drink]["recipe"]}
+        `);
+        } else {
+            console.log(`Такого напитка нет`);
+        }
+    }
+    function htmlDeleteValue() {
+        let key = prompt('Введите название напитка:'),
+            status=drinkStorage.deleteValue(key);
+        if (status===true) {
+            alert(`Напиток ${key} удален`);
+        } else {
+            alert(`Напиток ${key} не найден`);
+        }
+    }
+    function htmlAllValue() {
+        let key = drinkStorage.getKeys(),
+            i;
+        for (i in key) {
+            console.log(`
+        напиток: ${key}
+        `);
+        }
+    }
+    const drinkStorage = new HashStorage();
+</script>
 </body>
 </html>
