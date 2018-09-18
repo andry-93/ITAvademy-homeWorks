@@ -17,7 +17,14 @@
 <input type='button' value='Ввести слово' onclick='javascript:viewCount()'>
 <script>
     function vowelCount(str) {
-        return str.replace(/[^ауоеияюёэы]/ig, "").length;
+        let count = 0;
+        for(let i = 0; i < str.length; i++){
+            if(str[i].toLowerCase() === 'a' || str[i].toLowerCase() === 'i' || str[i].toLowerCase() === 'o' ||str[i].toLowerCase() === 'e' ||str[i].toLowerCase() === 'u'){
+                count++;
+            }
+        }
+        return count;
+        //return str.replace(/[^ауоеияюёэы]/ig, "").length;
     }
     function viewCount() {
         let str=prompt('Введите строку:')||"";
