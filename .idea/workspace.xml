@@ -44,13 +44,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="449" />
+          <entry key="html" value="450" />
           <entry key="js" value="2021" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="449" />
+          <entry key="HTML" value="450" />
           <entry key="JavaScript" value="2021" />
         </counts>
       </usages-collector>
@@ -85,8 +85,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/3_class/glasn.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="183">
-                  <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+                <state relative-caret-position="207">
+                  <caret line="21" column="322" selection-start-line="21" selection-start-column="322" selection-end-line="21" selection-end-column="322" />
                 </state>
               </provider>
             </entry>
@@ -242,12 +242,12 @@
       <workItem from="1537127953401" duration="632000" />
       <workItem from="1537187184399" duration="7009000" />
       <workItem from="1537195710159" duration="1496000" />
-      <workItem from="1537262602732" duration="5699000" />
+      <workItem from="1537262602732" duration="5915000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38871000" />
+    <option name="totallyTimeSpent" value="39087000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -367,8 +367,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/3_class/glasn.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+        <state relative-caret-position="207">
+          <caret line="21" column="322" selection-start-line="21" selection-start-column="322" selection-end-line="21" selection-end-column="322" />
         </state>
       </provider>
     </entry>
