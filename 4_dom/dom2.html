@@ -3530,11 +3530,12 @@
                 switch (node.nodeType) {
                     case 1:
                         console.log(tab.repeat(findElementLevel(node))+"<"+ node.nodeName+">");
+                        findElementDom(node);
+                        console.log(tab.repeat(findElementLevel(node))+"</"+ node.nodeName+">");
                         break;
                     default:
                         break;
                 }
-                findElementDom(node);
             }
         }
     }
