@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Подсчет гласных</title>
+    <style>
+        input[type=button] {
+            padding: 10px 20px;
+        }
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Подсчет гласных</h1>
+<input type='button' value='Ввести слово' onclick='javascript:viewCount()'>
+<script>
+    function vowelCount(str) {
+        let count = 0;
+        for(let i = 0; i < str.length; i++){
+            if(str[i].toLowerCase() === 'а' || str[i].toLowerCase() === 'у' || str[i].toLowerCase() === 'о' ||str[i].toLowerCase() === 'е' ||str[i].toLowerCase() === 'и' ||str[i].toLowerCase() === 'я' ||str[i].toLowerCase() === 'ю' ||str[i].toLowerCase() === 'ё' ||str[i].toLowerCase() === 'э' ||str[i].toLowerCase() === 'ы'){
+                count++;
+            }
+        }
+        return count;
+        //return str.replace(/[^ауоеияюёэы]/ig, "").length;
+    }
+    function vowelCountFilter(str) {
+        return str.toLowerCase() === 'а' || str.toLowerCase() === 'у' || str.toLowerCase() === 'о' || str.toLowerCase() === 'е' || str.toLowerCase() === 'и' || str.toLowerCase() === 'я' || str.toLowerCase() === 'ю' || str.toLowerCase() === 'ё' || str.toLowerCase() === 'э' || str.toLowerCase() === 'ы';
+    }
+    function viewCount() {
+        let str=prompt('Введите строку:')||"",
+            count=0,
+            strArr=str.split('');
+        console.log("(старый) Количество гласных: "+vowelCount(str));
+        console.log("(Filter) Количество гласных: "+strArr.filter(vowelCountFilter).length);
+        strArr.forEach(function (item, i, arr) {
+            if(item.toLowerCase() === 'а' || item.toLowerCase() === 'у' || item.toLowerCase() === 'о' ||item.toLowerCase() === 'е' ||item.toLowerCase() === 'и' ||item.toLowerCase() === 'я' ||item.toLowerCase() === 'ю' ||item.toLowerCase() === 'ё' ||item.toLowerCase() === 'э' ||item.toLowerCase() === 'ы'){
+                count++;
+            }
+            return count;
+            //console.log(i + ": " + item + " (массив:" + arr + ")");
+        });
+        console.log("(ForEach) Количество гласных: "+ count);
+    }
+</script>
+</body>
+</html>
