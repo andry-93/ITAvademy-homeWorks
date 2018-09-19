@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест</title>
+</head>
+<body>
+<div id="test1">
+    <div id="test2">
+        <div id="test3">
+            <div id="test4">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="test5">
+    <div id="test6">
+        <div id="test7">
+            <div id="test8">
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    /* Определение соседних элементов, родителя и типа узла (элемент или текст) */
+    /*
+    var el = document.getElementById("test4");
+    var prev = el.previousSibling; // Предыдущий сосед по DOM
+    var next = el.nextSibling; // Следующий сосед по DOM
+    // prev и next в данном примере являются текстовыми элементами с nodeType равным 3
+    // т.к. <div id="test"> окружен пробельными символами в разметке
+    console.log("Тип элемента: " + el.nodeType + " " + (el.nodeType == 1 ? el.id : ""));
+    console.log("Тип элемента: " + prev.nodeType + " " + (prev.nodeType == 1 ? prev.id : ""));
+    console.log("Тип элемента: " + next.nodeType + " " + (next.nodeType == 1 ? next.id : ""));
+    console.log("Родит. элемент: <" + el.parentNode.nodeName + "/>"); // Вывод имени тега через свойство nodeName
+    */
+
+    /* Проход по узлам DOM */
+    /*
+    var el = document.getElementById("test1");
+
+    var body = el.parentNode; // document.body
+    if (body.hasChildNodes()) { // проверка, если есть дочерние элементы
+        var nodes = body.childNodes; // получение массива дочерних элементов
+        for (let i = 0, n = nodes.length; i < n; i++) { // проход по массиву
+            var node = nodes[i];
+            switch (node.nodeType) { // сравнение элементов по типу
+                case 1: console.log("Элемент " + node.nodeName + " " + node.id); break;
+                case 3: console.log("#text"); break;
+                // сюда попадут все узлы, которые не являются текстом или элементом
+                // например комментарии
+                default: console.log("Не знаю"); break;
+            }
+        }
+    }
+    */
+
+    // Определение уровня вложенности элемента в DOM
+
+    /*function findElementLevel(el) {
+        let level = 0;
+        // Можно и так
+        //for (el = el.parentNode; el && el.nodeType === 1; el = el.parentNode) {
+        //    level++;
+        //}
+        //
+        el = el && el.parentNode;
+        while (el && el.nodeType === 1) {
+            level++;
+            el = el.parentNode;
+        }
+        return level;
+    }
+    console.log(findElementLevel(document.getElementById("test2")));
+    */
+</script>
+</body>
+</html>
