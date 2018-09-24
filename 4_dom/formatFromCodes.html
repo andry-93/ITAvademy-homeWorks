@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>formatFromCodes</title>
+</head>
+<body>
+<script>
+    function formatFromCodes(element, formatString) {
+        const s = formatString.trim();
+        const parts = s.split('[B]').filter(x => !!x); // отбросить пустые строки function(x) { If ( x) { Return x}}
+        const startsFromBold = s.indexOf('[B]') === 0;
+        for (let i = 0, n = parts.length; i < n; i++) {
+            // жирные блоки могут быть четными или нечетными
+            // если первый блок жирным, значит все четные жирные
+            // startsFromBold имеет значение true в этом случае
+            if ((i % 2 === 0 && startsFromBold) || (i % 2 !== 0 && !startsFromBold))  {
+                const bold = document.createElement('strong');
+                bold.textContent = parts[i];
+                element.appendChild(bold);
+            }
+            let partsEm = parts[i].split('[EM]').filter(x => !!x);
+            const startsFromItalic = parts[i].indexOf('[EM]') === 0;
+            for (let j = 0, m = partsEm.length; j < m; j++) {
+                if ((j % 2 === 0 && startsFromItalic) || (j % 2 !== 0 && !startsFromItalic))  {
+                    const italic = document.createElement('em');
+                    italic.textContent = partsEm[j];
+                    element.appendChild(italic);
+                } else {
+                    const text = document.createTextNode(partsEm[j]);
+                    element.appendChild(text);
+                }
+            }
+        }
+    }
+    formatFromCodes(
+        document.body,
+        "[B]это жирный текст[B] а это обычный[B], а это опять жирный текст[B], а это [EM]курсив[EM]");
+</script>
+</body>
+</html>

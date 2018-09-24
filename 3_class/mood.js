@@ -7,11 +7,12 @@ function randomDiap(n,m) {
 function mood(colorsCount) {
     const colors = ['', 'красный', 'оранжевый', 'жёлтый', 'зелёный', 'голубой', 'синий', 'фиолетовый'],
         resultColor = {};
-    console.log( 'цветов: ' + colorsCount );
+    colorsCount = (colorsCount<colors.length)?colorsCount:colors.length-1;
+    console.log( 'цветов: ' + colorsCount);
     for (let i=1; i<=colorsCount; i++ ) {
-        let n = randomDiap(1, 7);
+        let n = randomDiap(1, colors.length-1);
         while (colors[n] in resultColor) {
-            n=randomDiap(1,7);
+            n=randomDiap(1,colors.length-1);
         }
         resultColor[colors[n]]=n;
         const colorName = colors[n];
@@ -19,4 +20,4 @@ function mood(colorsCount) {
     }
 }
 
-mood(7);
+mood(5);
