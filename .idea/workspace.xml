@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12eedb9c-1aae-4cb9-8277-dc3b6f6db1a1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/3_class/mood.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_class/mood.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4_dom/dom2.html" beforeDir="false" afterPath="$PROJECT_DIR$/4_dom/dom2.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,25 +37,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="10" />
+          <entry key="html" value="11" />
           <entry key="js" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="10" />
+          <entry key="HTML" value="11" />
           <entry key="JavaScript" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1391" />
+          <entry key="html" value="1473" />
           <entry key="js" value="2031" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1391" />
+          <entry key="HTML" value="1473" />
           <entry key="JavaScript" value="2031" />
         </counts>
       </usages-collector>
@@ -63,10 +64,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/3_class/mood.js">
+        <entry file="file://$PROJECT_DIR$/4_dom/dom2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="253">
+              <caret line="3505" column="65" lean-forward="true" selection-start-line="3505" selection-start-column="65" selection-end-line="3505" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -103,8 +104,8 @@
         <option value="$PROJECT_DIR$/3_class/glasn.html" />
         <option value="$PROJECT_DIR$/4_dom/dom1.html" />
         <option value="$PROJECT_DIR$/4_dom/d1.html" />
-        <option value="$PROJECT_DIR$/4_dom/dom2.html" />
         <option value="$PROJECT_DIR$/3_class/mood.js" />
+        <option value="$PROJECT_DIR$/4_dom/dom2.html" />
       </list>
     </option>
   </component>
@@ -114,7 +115,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="426" />
     <option name="y" value="-22" />
     <option name="width" value="1346" />
@@ -223,12 +224,12 @@
       <workItem from="1537349488694" duration="17467000" />
       <workItem from="1537389155748" duration="1444000" />
       <workItem from="1537392449892" duration="1202000" />
-      <workItem from="1537795117123" duration="1340000" />
+      <workItem from="1537795117123" duration="3687000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60795000" />
+    <option name="totallyTimeSpent" value="63142000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -360,17 +361,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/4_dom/dom2.html">
+    <entry file="file://$PROJECT_DIR$/3_class/mood.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="3526" column="25" selection-start-line="3526" selection-start-column="25" selection-end-line="3526" selection-end-column="25" />
+        <state relative-caret-position="207">
+          <caret line="9" column="44" lean-forward="true" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/3_class/mood.js">
+    <entry file="file://$PROJECT_DIR$/4_dom/dom2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="253">
+          <caret line="3505" column="65" lean-forward="true" selection-start-line="3505" selection-start-column="65" selection-end-line="3505" selection-end-column="65" />
         </state>
       </provider>
     </entry>

@@ -3497,50 +3497,20 @@
 
 <link rel="stylesheet" href="https://gc.onliner.by/assets/non-critical-styles.953cde537b7da932.css" />
 <script>
-    function findDom(el) {
+    function findElementDom(el,tab) {
         if (el.hasChildNodes()) {
-            var nodes = el.childNodes;
-            for (let i = 0, n = nodes.length; i < n; i++) {
-                var node = nodes[i];
-                switch (node.nodeType) {
-                    case 1:
-                        console.log( node.valueOf());
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-    }
-    function findElementLevel(el) {
-        let level = 0;
-        el = el && el.parentNode;
-        while (el && el.nodeType === 1) {
-            level++;
-            el = el.parentNode;
-        }
-        return level;
-    }
-    function findElementDom(el) {
-        if (el.hasChildNodes()) {
-            let nodes = el.childNodes,
-                tab = '  ';
+            let nodes = el.childNodes;
             for (let i = 0, n = nodes.length; i < n; i++) {
                 let node = nodes[i];
-                switch (node.nodeType) {
-                    case 1:
-                        console.log(tab.repeat(findElementLevel(node))+"<"+ node.nodeName+">");
-                        findElementDom(node);
-                        console.log(tab.repeat(findElementLevel(node))+"</"+ node.nodeName+">");
-                        break;
-                    default:
-                        break;
+                if (node.nodeType===1) {
+                    console.log(tab+"  "+"<"+ node.nodeName+">");
+                    findElementDom(node,tab + "  ");
+                    console.log(tab+"  "+"</"+ node.nodeName+">");
                 }
             }
         }
     }
-    findElementDom(document);
-    findDom(document);
+    findElementDom(document,"");
 </script>
 
 </body>
