@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="12eedb9c-1aae-4cb9-8277-dc3b6f6db1a1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4_dom/dom2.html" beforeDir="false" afterPath="$PROJECT_DIR$/4_dom/dom2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_class/mood.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_class/mood.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,10 +18,11 @@
     <session id="-1304092076">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.31" value="2" />
@@ -29,32 +30,33 @@
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.40" value="1" />
+          <entry key="project.open.time.45" value="1" />
           <entry key="project.open.time.56" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="9" />
-          <entry key="js" value="20" />
+          <entry key="js" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="9" />
-          <entry key="JavaScript" value="20" />
+          <entry key="JavaScript" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1362" />
-          <entry key="js" value="2021" />
+          <entry key="html" value="1391" />
+          <entry key="js" value="2030" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1362" />
-          <entry key="JavaScript" value="2021" />
+          <entry key="HTML" value="1391" />
+          <entry key="JavaScript" value="2030" />
         </counts>
       </usages-collector>
     </session>
@@ -62,10 +64,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/4_dom/dom2.html">
+        <entry file="file://$PROJECT_DIR$/3_class/mood.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="3528" column="35" selection-start-line="3528" selection-start-column="35" selection-end-line="3528" selection-end-column="35" />
+            <state relative-caret-position="335">
+              <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -97,13 +99,13 @@
         <option value="$PROJECT_DIR$/2_mass/3_2.js" />
         <option value="$PROJECT_DIR$/3_class/marry.js" />
         <option value="$PROJECT_DIR$/3_class/marry_ES5.js" />
-        <option value="$PROJECT_DIR$/3_class/mood.js" />
         <option value="$PROJECT_DIR$/3_class/drinks.js" />
         <option value="$PROJECT_DIR$/3_class/drinks.html" />
         <option value="$PROJECT_DIR$/3_class/glasn.html" />
         <option value="$PROJECT_DIR$/4_dom/dom1.html" />
         <option value="$PROJECT_DIR$/4_dom/d1.html" />
         <option value="$PROJECT_DIR$/4_dom/dom2.html" />
+        <option value="$PROJECT_DIR$/3_class/mood.js" />
       </list>
     </option>
   </component>
@@ -113,7 +115,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="426" />
     <option name="y" value="-22" />
     <option name="width" value="1346" />
@@ -125,7 +127,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -147,6 +148,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -220,12 +222,14 @@
       <workItem from="1537195710159" duration="1496000" />
       <workItem from="1537262602732" duration="6170000" />
       <workItem from="1537349488694" duration="17467000" />
-      <workItem from="1537389155748" duration="1153000" />
+      <workItem from="1537389155748" duration="1444000" />
+      <workItem from="1537392449892" duration="1202000" />
+      <workItem from="1537795117123" duration="1004000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57962000" />
+    <option name="totallyTimeSpent" value="60459000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -240,7 +244,7 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13169643" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13169643" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -252,7 +256,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32838285" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49925596" visible="true" weight="0.29850745" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49925596" visible="true" weight="0.29850745" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50074404" side_tool="true" weight="0.32838285" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -336,13 +340,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/3_class/mood.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/4_dom/dom1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
@@ -366,8 +363,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/4_dom/dom2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="3528" column="35" selection-start-line="3528" selection-start-column="35" selection-end-line="3528" selection-end-column="35" />
+        <state relative-caret-position="114">
+          <caret line="3526" column="25" selection-start-line="3526" selection-start-column="25" selection-end-line="3526" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3_class/mood.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
         </state>
       </provider>
     </entry>
