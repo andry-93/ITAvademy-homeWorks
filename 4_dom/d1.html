@@ -35,14 +35,22 @@
             strArr=str.split('');
         console.log("(старый) Количество гласных: "+vowelCount(str));
         console.log("(Filter) Количество гласных: "+strArr.filter(vowelCountFilter).length);
-        strArr.forEach(function (item, i, arr) {
-            if(item.toLowerCase() === 'а' || item.toLowerCase() === 'у' || item.toLowerCase() === 'о' ||item.toLowerCase() === 'е' ||item.toLowerCase() === 'и' ||item.toLowerCase() === 'я' ||item.toLowerCase() === 'ю' ||item.toLowerCase() === 'ё' ||item.toLowerCase() === 'э' ||item.toLowerCase() === 'ы'){
+        strArr.forEach(function (item) {
+            let letters = {'а':1, 'у':1, 'о':1, 'е':1, 'и':1, 'я':1, 'ю':1, 'ё':1, 'э':1, 'ы':1};
+            if (item.toLowerCase() in letters) {
                 count++;
             }
             return count;
             //console.log(i + ": " + item + " (массив:" + arr + ")");
         });
         console.log("(ForEach) Количество гласных: "+ count);
+        console.log("(Reduce) Количество гласных: "+strArr.reduce(function(sum, current) {
+            let letters = {'а':1, 'у':1, 'о':1, 'е':1, 'и':1, 'я':1, 'ю':1, 'ё':1, 'э':1, 'ы':1};
+            if (current.toLowerCase() in letters) {
+                sum++;
+            }
+            return sum;
+        }, 0));
     }
 </script>
 </body>
