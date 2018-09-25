@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Динамические формы</title>
+</head>
+<body>
+<script>
+    function createForm () {
+        let el = document.body;
+        const form = document.createElement('form');
+        form.method = "POST";
+        form.action = "http://fe.it-academy.by/TestForm.php";
+        form.target = "_blank";
+        el.appendChild(form);
+        return form;
+    }
+    function innerForm (form, mas) {
+        for (let i = 0; i < mas.length; i++) {
+            let input = document.createElement('input'),
+                memo = document.createElement('textarea'),
+                label = document.createElement('label'),
+                select = document.createElement('select');
+            if ('label' in mas[i]) {
+                if (mas[i]['kind'] !== 'submit') {
+                    label.innerText = mas[i]['label'];
+                    form.appendChild(label);
+                }
+            }
+            if ('kind' in mas[i]) {
+                if (mas[i]['kind'] === 'longtext') {
+                    input.type = "text";
+                    input.style = "width: 453px;";
+                    form.appendChild(input);
+                }
+                if (mas[i]['kind'] === 'number') {
+                    input.type = "text";
+                    input.style = "width: 80px";
+                    form.appendChild(input);
+                }
+                if (mas[i]['kind'] === 'shorttext') {
+                    input.type = "text";
+                    input.style = "width: 200px";
+                    form.appendChild(input);
+                }
+                if (mas[i]['kind'] === 'memo') {
+                    let brMemo = document.createElement('br');
+                    form.appendChild(brMemo);
+                    memo.type = "text";
+                    memo.style = "width: 608px; height: 50px;";
+                    form.appendChild(memo);
+                }
+                if (mas[i]['kind'] === 'check') {
+                    input.type = "checkbox";
+                    form.appendChild(input);
+                }
+                if (mas[i]['kind'] === 'combo') {
+                    select.name = mas[i]['name'];
+                    form.appendChild(select);
+                    if (mas[i]['variants'] instanceof Array) {
+                        for (let j = 0; j < mas[i]['variants'].length; j++) {
+                            let option = document.createElement('option');
+                            option.innerText = mas[i]['variants'][j]['text'];
+                            option.value = mas[i]['variants'][j]['value'];
+                            select.appendChild(option);
+                        }
+                    }
+                }
+                if (mas[i]['kind'] === 'radio') {
+                    if (mas[i]['variants'] instanceof Array) {
+                        for (let j = 0; j < mas[i]['variants'].length; j++) {
+                            let labelRadio = document.createElement('label'),
+                                inputRadio = document.createElement('input');
+                            labelRadio.innerText = mas[i]['variants'][j]['text'];
+                            inputRadio.type = 'radio';
+                            inputRadio.value = mas[i]['variants'][j]['value'];
+                            inputRadio.name = mas[i]['name'];
+                            form.appendChild(labelRadio);
+                            labelRadio.appendChild(inputRadio);
+                        }
+                    }
+                }
+                if (mas[i]['kind'] === 'submit') {
+                    input.type = "submit";
+                    input.value = mas[i]['label'];
+                    form.appendChild(input);
+                }
+            }
+            if ('name' in mas[i]) {
+                input.name = mas[i]['name'];
+                memo.name = mas[i]['name'];
+            }
+            br = document.createElement('br');
+
+            form.appendChild(br);
+            console.log(mas[i].label);
+        }
+    }
+    let formDef1=
+        [
+            {label:'Название сайта:',kind:'longtext',name:'sitename'},
+            {label:'URL сайта:',kind:'longtext',name:'siteurl'},
+            {label:'Посетителей в сутки:',kind:'number',name:'visitors'},
+            {label:'E-mail для связи:',kind:'shorttext',name:'email'},
+            {label:'Рубрика каталога:',kind:'combo',name:'division',
+                variants:[{text:'здоровье',value:1},{text:'домашний уют',value:2},{text:'бытовая техника',value:3}]},
+            {label:'Размещение:',kind:'radio',name:'payment',
+                variants:[{text:'бесплатное',value:1},{text:'платное',value:2},{text:'VIP',value:3}]},
+            {label:'Разрешить отзывы:',kind:'check',name:'votes'},
+            {label:'Описание сайта:',kind:'memo',name:'description'},
+            {label:'Опубликовать:',kind:'submit'},
+        ];
+
+    let formDef2=
+        [
+            {label:'Фамилия:',kind:'longtext',name:'lastname'},
+            {label:'Имя:',kind:'longtext',name:'firstname'},
+            {label:'Отчество:',kind:'longtext',name:'secondname'},
+            {label:'Возраст:',kind:'number',name:'age'},
+            {label:'Зарегистрироваться:',kind:'submit'},
+        ];
+    innerForm(createForm(), formDef1);
+    innerForm(createForm(), formDef2);
+</script>
+</body>
+</html>
