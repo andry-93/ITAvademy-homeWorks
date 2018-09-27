@@ -14,8 +14,8 @@ function mood(colorsCount) {
         if (colors[n] in resultColor) {
             continue;
         }
-        resultColor[colors[n]]=n;
         const colorName = colors[n];
+        resultColor[colorName]=n;
         count++;
         console.log( colorName );
     }
