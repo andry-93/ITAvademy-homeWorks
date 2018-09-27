@@ -19,6 +19,7 @@
                 bold.textContent = parts[i];
                 element.appendChild(bold);
             }
+            //console.log(parts);
             let partsEm = parts[i].split('[EM]').filter(x => !!x);
             const startsFromItalic = parts[i].indexOf('[EM]') === 0;
             for (let j = 0, m = partsEm.length; j < m; j++) {
@@ -26,9 +27,10 @@
                     const italic = document.createElement('em');
                     italic.textContent = partsEm[j];
                     element.appendChild(italic);
-                } else {
+                } else if ((i % 2 === 0 && !startsFromBold) || (i % 2 !== 0 && startsFromBold)) {
                     const text = document.createTextNode(partsEm[j]);
                     element.appendChild(text);
+                    console.log(partsEm);
                 }
             }
         }
