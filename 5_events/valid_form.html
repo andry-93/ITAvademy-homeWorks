@@ -36,20 +36,25 @@
         submit = document.querySelectorAll("form input[type=\"submit\"]");
 
     submit[0].addEventListener('click', function (e) {
-        let error = 0;
-
-        for (let j = 0; j < text.length; j++) {
+        let error = 0,
+            erEl = [];
+        for (let i = 0; i < text.length; i++) {
             let el = document.createElement('span');
-            let parent = text[j].parentNode;
-            if ((text[j].value === '')&&(!document.body.contains(el))) {
+            let parent = text[i].parentNode;
+            if (parent.lastChild.className === "error") {
+                parent.removeChild(parent.lastChild)
+            }
+            if ((text[i].value === '')&&(parent.lastChild.className !== "error")) {
                 error++;
+                erEl.push(el);
                 el.className = "error";
                 el.innerHTML="<br>Значение не введено";
                 el.style = "color: red";
                 parent.appendChild(el);
-            } else if ((text[j].value !== '')&&(document.body.contains(el))) {
-                parent.removeChild(el);
             }
+        }
+        if (erEl.length >= 0) {
+            erEl[0].parentNode.firstChild.focus();
         }
         if (error !== 0) {
             submit[0].type = 'button';
@@ -62,13 +67,14 @@
         let el = document.createElement('span');
         text[i].addEventListener('blur', function (e) {
             let parent = this.parentNode;
-            if ((this.value === '')&&(!document.body.contains(el))) {
+            if (parent.lastChild.className === "error") {
+                parent.removeChild(parent.lastChild)
+            }
+            if ((this.value === '')&&(parent.lastChild.className !== "error")) {
                 el.className = "error";
                 el.innerHTML="<br>Значение не введено";
                 el.style = "color: red";
                 parent.appendChild(el);
-            } else if ((this.value !== '')&&(document.body.contains(el))) {
-                parent.removeChild(el);
             }
         });
     }
