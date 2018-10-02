@@ -36,7 +36,7 @@
         submit = document.querySelectorAll("form input[type=\"submit\"]");
 
     submit[0].addEventListener('click', function (e) {
-        let error = 0,
+        let error = false,
             erEl = [];
         for (let i = 0; i < text.length; i++) {
             let el = document.createElement('span');
@@ -45,7 +45,7 @@
                 parent.removeChild(parent.lastChild)
             }
             if ((text[i].value === '')&&(parent.lastChild.className !== "error")) {
-                error++;
+                error = true;
                 erEl.push(el);
                 el.className = "error";
                 el.innerHTML="<br>Значение не введено";
@@ -53,10 +53,10 @@
                 parent.appendChild(el);
             }
         }
-        if (erEl.length >= 0) {
+        if (erEl.length > 0) {
             erEl[0].parentNode.firstChild.focus();
         }
-        if (error !== 0) {
+        if (error) {
             submit[0].type = 'button';
         } else {
             submit[0].type = 'submit';
