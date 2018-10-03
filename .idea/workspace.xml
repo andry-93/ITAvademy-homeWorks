@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12eedb9c-1aae-4cb9-8277-dc3b6f6db1a1" name="Default Changelist" comment="v. 1">
-      <change afterPath="$PROJECT_DIR$/5_events/dragDrop.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5_events/valid_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/5_events/valid_form.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -59,14 +59,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="4304" />
+          <entry key="html" value="4649" />
           <entry key="js" value="2149" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="4304" />
+          <entry key="HTML" value="4649" />
           <entry key="JavaScript" value="2149" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
@@ -75,16 +75,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/5_events/valid_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+            <state relative-caret-position="253">
+              <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/5_events/dragDrop.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="299">
@@ -134,8 +134,8 @@
         <option value="$PROJECT_DIR$/4_dom/formatFromCodes.html" />
         <option value="$PROJECT_DIR$/3_class/mood.js" />
         <option value="$PROJECT_DIR$/5_events/mouse.html" />
-        <option value="$PROJECT_DIR$/5_events/valid_form.html" />
         <option value="$PROJECT_DIR$/5_events/dragDrop.html" />
+        <option value="$PROJECT_DIR$/5_events/valid_form.html" />
       </list>
     </option>
   </component>
@@ -261,12 +261,12 @@
       <workItem from="1538416963229" duration="16000" />
       <workItem from="1538417019680" duration="3352000" />
       <workItem from="1538468183725" duration="2276000" />
-      <workItem from="1538561963976" duration="596000" />
+      <workItem from="1538561963976" duration="4536000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122680000" />
+    <option name="totallyTimeSpent" value="126620000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -440,13 +440,6 @@
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/5_events/valid_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/5_events/dragDrop.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -455,6 +448,13 @@
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5_events/valid_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
         </state>
       </provider>
     </entry>

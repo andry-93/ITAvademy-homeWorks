@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>VALID_FORM</title>
@@ -21,7 +21,7 @@
             </select>
         </td></tr>
         <tr><td>Размещение:</td><td style="padding: 2px 0 2px 0">
-            <input type="radio" name="public" value="1"><span class="SRadio8a">бесплатное</span>
+            <input type="radio" name="public" checked value="1"><span class="SRadio8a">бесплатное</span>
             <input type="radio" name="public" value="2"><span class="SRadio8a">платное</span>
             <input type="radio" name="public" value="3"><span class="SRadio8a">VIP</span>
         </td></tr>
@@ -34,7 +34,6 @@
 <script>
     let text = document.querySelectorAll("form input[type=\"text\"], form textarea"),
         submit = document.querySelectorAll("form input[type=\"submit\"]");
-
     submit[0].addEventListener('click', function (e) {
         let error = false,
             erEl = [];
@@ -62,7 +61,6 @@
             submit[0].type = 'submit';
         }
     });
-
     for (let i = 0; i < text.length; i++) {
         let el = document.createElement('span');
         text[i].addEventListener('blur', function (e) {
