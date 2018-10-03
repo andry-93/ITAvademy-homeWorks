@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <title>x</title>
+    <meta charset="UTF-8">
+</head>
+<body ondrop="divDrop(event)" ondragover="divDragOver(event)">
+<div class="drop-target" style='border: solid red 1px; width: 300px; height: 150px'></div>
+<br />
+<div class="drop-target" style='border: solid blue 1px; width: 300px; height: 150px'></div>
+<br /><br />
+<img id='BALL1' width=50 src="http://fe.it-academy.by/Examples/ball3.png" ondragstart="ballDragStart(event)" ondragend="ballDragEnd(event)">
+<img id='BALL2' width=70 src="http://fe.it-academy.by/Examples/ball3.png" ondragstart="ballDragStart(event)" ondragend="ballDragEnd(event)">
+<img id='BALL3' width=100 src="http://fe.it-academy.by/Examples/ball3.png" ondragstart="ballDragStart(event)" ondragend="ballDragEnd(event)">
+
+<script>
+    "use strict";
+    var draggedBall=null;
+
+    function ballDragStart(e) {
+        draggedBall = e.target;
+        draggedBall.style.opacity = 0;
+    }
+
+    function ballDragEnd(e) {
+        draggedBall.style.opacity = 1;
+        draggedBall=null;
+    }
+
+    function divDragOver(e) {
+        if (e.target.className == 'drop-target'
+            || e.target == document.body) {
+            e.preventDefault();
+        }
+    }
+
+    function divDrop(e) {
+        e.preventDefault();
+        if (draggedBall) {
+            e.target.appendChild(draggedBall);
+        }
+    }
+
+</script>
+</body>
+</html>
