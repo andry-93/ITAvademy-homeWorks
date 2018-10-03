@@ -14,18 +14,26 @@
 <body>
 
 <div id="container">
-    <div style="width:100px;height:100px;position:absolute;background:yellow"></div>
-    <div style="width:100px;height:100px;position:absolute;background:darkred"></div>
+    <img alt="" src="http://placehold.it/100x100" style="position: absolute; border: solid 1px red">
+    <img alt="" src="http://placehold.it/100x100" style="position: absolute; border: solid 1px yellow">
 </div>
 <script>
 
-    var div = document.getElementById('container');
-    div.addEventListener('mousemove', handleMouseMove);
-    div.addEventListener('mousedown', handleMouseDown);
-    div.addEventListener('mouseup', handleMouseUp);
+    var img = document.getElementById('container');
+    img.addEventListener('mousemove', handleMouseMove);
+    img.addEventListener('mousedown', handleMouseDown);
+    img.addEventListener('mouseup', handleMouseUp);
 
     var graggableObject = null; // Перемещаемый элемент
     var xy = {}; // Начальные координаты элемента
+
+    function zIndexDefault() {
+        let imgAll = document.querySelectorAll("#container img");
+        for (let i = 0; imgAll.length > i; i++) {
+            imgAll[i].style.zIndex = '1';
+        }
+        console.log(imgAll);
+    }
 
     function handleMouseDown(e) {
         event.preventDefault();
@@ -37,12 +45,12 @@
         xy.mtop = e.clientY; // Запомнить позицию курсора по Y в начальной точке
         xy.mleft = e.clientX; // Запомнить позицию курсора по X в начальной точке
         graggableObject.style.cursor = "move";
+        zIndexDefault();
         graggableObject.style.zIndex = '2';
     }
 
     function handleMouseUp(e) {
         graggableObject.style.cursor = "default";
-        graggableObject.style.zIndex = '1';
         graggableObject = null; // Очистка
         xy = {};
     }
