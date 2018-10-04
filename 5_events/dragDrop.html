@@ -9,9 +9,9 @@
 <br />
 <div class="drop-target" style='border: solid blue 1px; width: 300px; height: 150px'></div>
 <br /><br />
-<img id='BALL1' width=50 src="http://fe.it-academy.by/Examples/ball3.png" ondragstart="ballDragStart(event)" ondragend="ballDragEnd(event)">
-<img id='BALL2' width=70 src="http://fe.it-academy.by/Examples/ball3.png" ondragstart="ballDragStart(event)" ondragend="ballDragEnd(event)">
-<img id='BALL3' width=100 src="http://fe.it-academy.by/Examples/ball3.png" ondragstart="ballDragStart(event)" ondragend="ballDragEnd(event)">
+<img id='BALL1' width=50 src="http://fe.it-academy.by/Examples/ball3.png" ondragstart="ballDragStart(event)" ondrag="ballDrag(event)" ondragend="ballDragEnd(event)">
+<img id='BALL2' width=70 src="http://fe.it-academy.by/Examples/ball3.png" ondragstart="ballDragStart(event)" ondrag="ballDrag(event)" ondragend="ballDragEnd(event)">
+<img id='BALL3' width=100 src="http://fe.it-academy.by/Examples/ball3.png" ondragstart="ballDragStart(event)" ondrag="ballDrag(event)" ondragend="ballDragEnd(event)">
 
 <script>
     "use strict";
@@ -19,11 +19,15 @@
 
     function ballDragStart(e) {
         draggedBall = e.target;
-        draggedBall.style.opacity = 0;
+        //draggedBall.style.opacity = '0';
+    }
+
+    function ballDrag(e) {
+        draggedBall.style.opacity = '0';
     }
 
     function ballDragEnd(e) {
-        draggedBall.style.opacity = 1;
+        draggedBall.style.opacity = '1';
         draggedBall=null;
     }
 

@@ -18,7 +18,7 @@
     <img alt="" src="http://placehold.it/100x100" style="position: absolute; border: solid 1px yellow">
 </div>
 <script>
-
+    "use strict";
     var img = document.getElementById('container');
     img.addEventListener('mousemove', handleMouseMove);
     img.addEventListener('mousedown', handleMouseDown);
@@ -32,12 +32,11 @@
         for (let i = 0; imgAll.length > i; i++) {
             imgAll[i].style.zIndex = '1';
         }
-        console.log(imgAll);
     }
 
     function handleMouseDown(e) {
-        event.preventDefault();
-        event.stopPropagation();
+        e.preventDefault();
+        e.stopPropagation();
         graggableObject = e.target; // Сохранить элемент-источник события
         var s = getComputedStyle(graggableObject);
         xy.top = s.top; // Запомнить его начальную координату Y верхней точки
