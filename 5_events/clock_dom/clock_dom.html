@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clock</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        #clock {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            background-image: url(img/clock.png);
+            background-repeat: no-repeat;
+        }
+        #hor {
+            position: absolute;
+            top: 0;
+            left: 383px;
+        }
+        #min {
+            position: absolute;
+            top: 0;
+            left: 383px;
+        }
+        #sec {
+            position: absolute;
+            top: 0;
+            left: 389px;
+        }
+        span {
+            display: block;
+            position: absolute;
+            top: 250px;
+            left: 250px;
+            width: 300px;
+            background-color: #000;
+            padding: 10px 10px;
+            text-align: center;
+            color: #fff;
+            font-size: 60px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="clock">
+    <span></span>
+    <img src="img/hor.png" alt="#" id="hor">
+    <img src="img/min.png" alt="#" id="min">
+    <img src="img/sec.png" alt="#" id="sec">
+</div>
+<script>
+    function time() {
+        span.innerHTML = `${hor}:${min}:${sec}`;
+        if (sec+1 === 61) {
+            sec = 0;
+            if (min+1 === 61) {
+                min = 0;
+                if (hor+1 === 25) {
+                    hor = 0;
+                }
+                hor += 1;
+            }
+            min += 1;
+        }
+        sec += 1;
+    }
+    function fTime() {
+        secImg.style.transform = 'rotate('+degSec+'deg)';
+        minImg.style.transform = 'rotate('+degMin+'deg)';
+        horImg.style.transform = 'rotate('+degHor+'deg)';
+        if (degSec+6 === 366) {
+            degSec = 0;
+            if (degMin+6 === 366) {
+                degMin = 0;
+                if (degHor+30 === 390) {
+                    degHor = 0;
+                }
+                degHor += 30;
+            }
+            degMin += 6;
+        }
+        degSec += 6;
+    }
+    let date = new Date(),
+        sec = date.getSeconds(),
+        degSec = sec*6,
+        min = date.getMinutes(),
+        degMin = min*6,
+        hor = date.getHours(),
+        degHor = (hor>12)?(hor-12)*30:hor*30;
+    const secImg = document.querySelector('#sec'),
+        minImg = document.querySelector('#min'),
+        horImg = document.querySelector('#hor'),
+        span = document.querySelector('span');
+    fTime();
+    setInterval(fTime, 1000);
+    time();
+    setInterval(time, 1000);
+</script>
+</body>
+</html>
