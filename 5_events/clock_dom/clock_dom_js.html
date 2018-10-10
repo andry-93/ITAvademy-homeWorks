@@ -27,20 +27,32 @@
         document.body.appendChild(clock);
         for (let i = 1, deg = 30; i <= 12; i++, deg+=30) {
             const num = document.createElement('div');
+            const span = document.createElement('span');
+            const numInner = document.createElement('div');
             num.className = "num";
-            num.innerText = i;
+            //num.innerText = i;
             num.style.position = 'absolute';
             num.style.top = (wh - 40)/2+'px';
             num.style.left = (wh - 40)/2+'px';
             num.style.transformOrigin = '50% 50%';
-            num.style.textAlign = 'center';
-            num.style.lineHeight = '40px';
+            //num.style.textAlign = 'center';
+            //num.style.lineHeight = '40px';
             num.style.borderRadius = '50%';
             num.style.width = '40px';
             num.style.height = '40px';
             num.style.backgroundColor = 'green';
             num.style.transform = 'rotate('+deg+'deg) translateY(-160px)';
             clock.appendChild(num);
+            num.appendChild(numInner);
+            span.innerText = i;
+            span.style.transform = 'rotate('+-deg+'deg)';
+            span.style.display = 'inline-block';
+            numInner.style.height = '100%';
+            numInner.style.display = 'flex';
+            numInner.style.flexDirection = 'column';
+            numInner.style.justifyContent = 'center';
+            numInner.style.textAlign = 'center';
+            numInner.appendChild(span);
         }
         //цифровые часы
         digClock.className = 'dig-clock';
@@ -120,6 +132,8 @@
             degMin += 6;
         }
         degSec += 6;
+        time();
+        setTimeout(fTime, 1000);
     }
     createClock();
     let date = new Date(),
@@ -133,10 +147,7 @@
         minHand = document.querySelector('.min'),
         horHand = document.querySelector('.hor'),
         digClock = document.querySelector('.dig-clock');
-    time();
     fTime();
-    setInterval(time, 1000);
-    setInterval(fTime, 1000);
 </script>
 </body>
 </html>
