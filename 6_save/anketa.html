@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="button" onclick="anketa()" value="Ввести данные анкеты">
+<input type="button" onclick="view()" value="Отобразить сохраненные данные акеты в консоли">
+<input type="button" onclick="localStorage.clear()" value="Очистить сохраненные данные акеты">
+<script>
+    "use strict";
+    function anketa() {
+        let lastName=prompt("Ваша фамилия?","")||"фамилия не указана,",
+            firstName=prompt("Ваше имя?","")||"имя не указано,",
+            secondName=prompt("Ваше отчество?","")||"отчество не указано",
+            years=prompt("Сколько вам лет?",18)||"возраст не указан",
+            gender = confirm("Ваш пол - мужской?"),
+            pensioner;
+        if (gender===true){
+            gender="мужской";
+            if ((years>=63)&&(years!=='возраст не указан')){
+                pensioner="да";
+            } else if (years!=='возраст не указан') {
+                pensioner="нет";
+            } else pensioner=years;
+        } else{
+            gender="женский";
+            if ((years>=58)&&(years!=='возраст не указан')){
+                pensioner="да";
+            }
+            else if (years!=='возраст не указан') {
+                pensioner = "нет";
+            } else pensioner=years;
+        }
+        let fiveYears = (years!=='возраст не указан') ? +years + 5 : years;
+        let dayYears = (years!=='возраст не указан') ? +years * 365 : years;
+        localStorage['fio'] = lastName + ' ' + firstName + ' ' + secondName;
+        localStorage['years'] = years;
+        localStorage['gender'] = gender;
+        localStorage['pensioner'] = pensioner;
+        localStorage['fiveYears'] = fiveYears;
+        localStorage['dayYears'] = fiveYears;
+        console.log("Ваше ФИО: "+lastName+" "+firstName+" "+secondName+"\nВаш возраст в годах: "+years+"\nВаш возраст в днях: "+dayYears+"\nЧерез 5 лет вам будет: "+fiveYears+"\nВаш пол: "+gender+"\nВы на пенсии: "+pensioner);
+    }
+    function view() {
+        if (localStorage['fio']) {
+            console.log("Ваше ФИО: "+localStorage['fio']+"\nВаш возраст в годах: "+localStorage['years']+"\nВаш возраст в днях: "+localStorage['dayYears']+"\nЧерез 5 лет вам будет: "+localStorage['fiveYears']+"\nВаш пол: "+localStorage['gender']+"\nВы на пенсии: "+localStorage['pensioner']);
+        } else {
+            console.log('Данные не сохранены');
+        }
+    }
+</script>
+</body>
+</html>
