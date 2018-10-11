@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Напитки</title>
+    <style>
+        input[type=button] {
+            padding: 10px 20px;
+        }
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Здравствуйте, выберете действиядействия с напитками</h1>
+<h2>Действия с напитками</h2>
+<input type='button' value='Добавить напиток' onclick='javascript:htmlAddValue()'>
+<input type='button' value='Получить информацию о напитке' onclick='javascript:htmlGetValue()'>
+<input type='button' value='Удалить информацию о напитке' onclick='javascript:htmlDeleteValue()'>
+<input type='button' value='Перечень всех напитков' onclick='javascript:htmlAllValue()'>
+<input type='button' value='Перечень всех сохраненных напитков' onclick='javascript:htmlAllSaveValue()'>
+<h2>Действия с блюдами</h2>
+<input type='button' value='Добавить блюдо' onclick='javascript:menuAddValue()'>
+<input type='button' value='Получить информацию о блюде' onclick='javascript:menuGetValue()'>
+<input type='button' value='Удалить информацию о блюде' onclick='javascript:menuDeleteValue()'>
+<input type='button' value='Перечень всех блюд' onclick='javascript:menuAllValue()'>
+<input type='button' value='Перечень всех сохраненных блюд' onclick='javascript:menuAllSaveValue()'>
+<script src="drinks.js"></script>
+<script>
+    function htmlAddValue() {
+        let drink = prompt('Введите название напитка:')||" ",
+            alcohol = confirm('Этот напиток алкогольный?')||false,
+            recipe = prompt('Введите рецепт напитка:')||" ";
+        drinkStorage.addValue(drink, {'alcohol': alcohol, 'recipe': recipe});
+        htmlSaveValue();
+    }
+    function menuAddValue() {
+        let dish = prompt('Введите название блюда:')||" ",
+            recipe = prompt('Введите рецепт блюда:')||" ";
+        menuStorage.addValue(dish, {'recipe': recipe});
+        localStorage['menu'] = {dish: {'recipe': recipe}};
+        htmlSaveValue();
+    }
+    function htmlGetValue() {
+        let drink = prompt('Введите название напитка:'),
+            drinkObj=drinkStorage.getValue(drink);
+        if (typeof drinkObj  !== 'undefined') {
+            console.log(`
+        напиток: ${drink}
+        алкогольный: ${drinkStorage.hash[drink]["alcohol"]}
+        рецепт приготовления: ${drinkStorage.hash[drink]["recipe"]}
+        `);
+        } else {
+            console.log(`Такого напитка нет`);
+        }
+    }
+    function menuGetValue() {
+        let dish = prompt('Введите название напитка:'),
+            dishObj=menuStorage.getValue(dish);
+        if (typeof dishObj  !== 'undefined') {
+            console.log(`
+        напиток: ${dish}
+        рецепт приготовления: ${menuStorage.hash[dish]["recipe"]}
+        `);
+        } else {
+            console.log(`Такого блюда нет`);
+        }
+    }
+    function htmlDeleteValue() {
+        let key = prompt('Введите название напитка:'),
+            status=drinkStorage.deleteValue(key);
+        if (status===true) {
+            alert(`Напиток ${key} удален`);
+            htmlSaveValue();
+        } else {
+            alert(`Напиток ${key} не найден`);
+        }
+    }
+    function menuDeleteValue() {
+        let key = prompt('Введите название блюда:'),
+            status=menuStorage.deleteValue(key);
+        localStorage.removeItem(key);
+        if (status===true) {
+            alert(`Блюдо ${key} удалено`);
+            htmlSaveValue();
+        } else {
+            alert(`Блюдо ${key} не найден`);
+        }
+    }
+    function htmlSaveValue() {
+        localStorage.clear();
+        localStorage["drinks"] = JSON.stringify(drinkStorage.hash);
+        localStorage["menu"] = JSON.stringify(menuStorage.hash);
+    }
+    function htmlAllValue() {
+        let key = drinkStorage.getKeys(),
+            i;
+        for (i in key) {
+            console.log(`
+        напиток: ${key}
+        `);
+        }
+    }
+    function htmlAllSaveValue() {
+        let obj = JSON.parse(localStorage["drinks"]),
+            key = Object.keys(obj),
+            i;
+        for (i in key) {
+            console.log(`
+        напиток: ${key}
+        `);
+        }
+    }
+    function menuAllValue() {
+        let key = menuStorage.getKeys(),
+            i;
+        for (i in key) {
+            console.log(`
+        блюдо: ${key}
+        `);
+        }
+    }
+    function menuAllSaveValue() {
+        let obj = JSON.parse(localStorage["menu"]),
+            key = Object.keys(obj),
+            i;
+        for (i in key) {
+            console.log(`
+        напиток: ${key}
+        `);
+        }
+    }
+    const drinkStorage = new HashStorage();
+    const menuStorage = new HashStorage();
+</script>
+</body>
+</html>
