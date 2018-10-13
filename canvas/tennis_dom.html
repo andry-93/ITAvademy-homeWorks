@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Теннис</title>
+    <style>
+        #area {
+            width: 600px;
+            height: 400px;
+            border: solid black 1px;
+            position: relative;
+            background-color: palegoldenrod;
+        }
+        #IBall {
+            position: absolute;
+            background-color: red;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+        }
+        .rl, .rr {
+            position: absolute;
+            width: 10px;
+            height: 120px;
+        }
+        .rl {
+            background-color: green;
+        }
+        .rr {
+            background-color: blue;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <input type='button' value='Старт!' onclick='start()'>
+    <div style="text-align: center; width: 600px;"><span id="scoreLeft">0</span>:<span id="scoreRight">0</span></div>
+    <br /><br />
+    <div id="area">
+        <div id="IBall"></div>
+        <div class="rl" onkeyup=""></div>
+        <div class="rr" onkeydown="" onkeyup=""></div>
+    </div>
+
+    <script>
+
+        "use strict";
+
+        const rl = {
+            posY: 10,
+            speedY: 1,
+            width: 10,
+            height: 120,
+            update: function () {
+                const rElem = document.querySelector('.rl');
+                rElem.style.top = this.posY + "px";
+            }
+        };
+
+        let scoreLeft = document.getElementById('scoreLeft');
+        scoreLeft.innerText = '0';
+        let scoreRight = document.getElementById('scoreRight');
+        scoreRight.innerText = '0';
+
+        const rr = {
+            posY: 10,
+            speedY: 1,
+            width: 10,
+            height: 120,
+            update: function () {
+                const rElem = document.querySelector('.rr');
+                rElem.style.top = this.posY + "px";
+            }
+        };
+
+        const ballH = {
+            posX: 288,
+            posY: 188,
+            speedX: randomDiap(0.5,2),
+            speedY: randomDiap(0.5,2),
+            width: 24,
+            height: 24,
+            update: function () {
+                const ballElem = document.getElementById('IBall');
+                ballElem.style.left = this.posX + "px";
+                ballElem.style.top = this.posY + "px";
+            }
+        };
+
+        const areaH = {
+            width: 600,
+            height: 400
+        };
+
+        let pressLInterval,
+            pressRInterval,
+            pressedR = false,
+            pressedL = false,
+            pressedBall = false,
+            ranX = randomDiap(0,1),
+            ranY = randomDiap(0,1);
+
+        function randomDiap(n,m) {
+            return Math.floor(
+                Math.random()*(m-n+1)
+            )+n;
+        }
+
+        document.onkeydown = function(e) {
+           if (e.keyCode === 17) {
+               if (!pressedL) {
+                   pressLInterval = window.setInterval(function() {
+                       if ( !(rl.posY+rl.height>areaH.height) ) {
+                           rl.posY+=rl.speedY;
+                       }
+                       if ( rl.posY+rl.height>areaH.height ) {
+                           clearInterval(pressLInterval);
+                       }
+                       if ( rl.posY<0 ) {
+                           rl.speedY=-rl.speedY;
+                           rl.posY=0;
+                       }
+                       rl.update();
+                   },5);
+               }
+               pressedL = true;
+            } else if (e.keyCode === 16) {
+               if (!pressedL) {
+                   pressLInterval = window.setInterval(function () {
+                       if (rl.posY > 0) {
+                           rl.posY -= rl.speedY;
+                       }
+                       if (rl.posY < 0) {
+                           clearInterval(pressLInterval);
+                       }
+                       rl.update();
+                   }, 5)
+               }
+               pressedL = true;
+            }
+
+            if (e.keyCode === 40) {
+                if (!pressedR) {
+                    pressRInterval = window.setInterval(function() {
+                        if ( !(rr.posY+rr.height>areaH.height) ) {
+                            rr.posY+=rr.speedY;
+                        }
+                        if ( rr.posY+rr.height>areaH.height ) {
+                            clearInterval(pressRInterval);
+                        }
+                        if ( rr.posY<0 ) {
+                            rr.speedY=-rl.speedY;
+                            rr.posY=0;
+                        }
+                        rr.update();
+                    },5);
+                }
+                pressedR = true;
+            } else if (e.keyCode === 38) {
+                if (!pressedR) {
+                    pressRInterval = window.setInterval(function () {
+                        if (rr.posY > 0) {
+                            rr.posY -= rr.speedY;
+                        }
+                        if (rr.posY < 0) {
+                            clearInterval(pressRInterval);
+                        }
+                        rr.update();
+                    }, 5)
+                }
+                pressedR = true;
+            }
+        };
+        document.onkeyup = function(e) {
+            if ((e.keyCode === 17)||(e.keyCode === 16)) {
+                clearInterval(pressLInterval);
+                pressedL = false;
+            } else if ((e.keyCode === 40)||(e.keyCode === 38)) {
+                clearInterval(pressRInterval);
+                pressedR = false;
+            }
+        };
+
+        let intervalBall;
+        function start() {
+            // плавное движение - от 25 кадр/сек
+            if (!pressedBall) {
+                intervalBall = setInterval(tick, 5);
+            }
+            pressedBall = true;
+        }
+        function tick() {
+            if (ranX === 1) {
+                ballH.posX+=ballH.speedX;
+            } else {
+                ballH.posX-=ballH.speedX;
+            }
+            // вылетел ли мяч правее стены?
+            if ( (ballH.posX+ballH.width)>(areaH.width-rr.width) ) {
+                if ((ballH.posY>rr.posY) && (ballH.posY+ballH.height<rr.posY+rr.height)) {
+                    ballH.speedX=-ballH.speedX;
+                    ballH.posX=areaH.width-rr.width-ballH.width;
+                }
+
+            }
+            if ( ballH.posX+ballH.width>=areaH.width ) {
+                ballH.speedX=-ballH.speedX;
+                ballH.posX=areaH.width-ballH.width;
+                pressedBall = false;
+                clearInterval(intervalBall);
+                scoreRight.innerHTML = +scoreRight.innerHTML+1;
+            }
+            // вылетел ли мяч левее стены?
+            if ( ballH.posX<rl.width ) {
+                if ((ballH.posY>rl.posY) && (ballH.posY+ballH.height<rl.posY+rl.height)) {
+                    ballH.speedX=-ballH.speedX;
+                    ballH.posX=rl.width;
+                }
+                if ( ballH.posX<0 ) {
+                    ballH.speedX=-ballH.speedX;
+                    ballH.posX=0;
+                    pressedBall = false;
+                    clearInterval(intervalBall);
+                    scoreLeft.innerHTML = +scoreLeft.innerHTML+1;
+                }
+            }
+
+            if (ranY === 1) {
+                ballH.posY+=ballH.speedY;
+            } else {
+                ballH.posY-=ballH.speedY;
+            }
+            // вылетел ли мяч ниже пола?
+            if ( ballH.posY+ballH.height>areaH.height ) {
+                ballH.speedY=-ballH.speedY;
+                ballH.posY=areaH.height-ballH.height;
+            }
+            // вылетел ли мяч выше потолка?
+            if ( ballH.posY<0 ) {
+                ballH.speedY=-ballH.speedY;
+                ballH.posY=0;
+            }
+            ballH.update();
+        }
+
+        ballH.update();
+        rl.update();
+        rr.update();
+    </script>
+</body>
+</html>
