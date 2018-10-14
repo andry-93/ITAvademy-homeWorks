@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         #hour, #min, #sec { stroke-width: 1px; fill: #333; stroke: #555; }
         #sec { stroke: #f55; }
     </style>
@@ -35,14 +38,19 @@
     function createCircle() {
         let circleGroup = document.querySelector('#circle');
         for (let i = 1, deg = 30; i <= 12; i++, deg += 30) {
-            let circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+            let circle = document.createElementNS('http://www.w3.org/2000/svg','circle'),
+                text = document.createElementNS('http://www.w3.org/2000/svg','text');
+            text.textContent = i;
+            text.setAttribute("x",(95+80*Math.sin(deg * Math.PI/180)) +  'px');
+            text.setAttribute("y",(105-80*Math.cos(deg * Math.PI/180)) +  'px');
             circle.setAttribute("cx","100");
             circle.setAttribute("cy","100");
-            circle.setAttribute("r","5");
+            circle.setAttribute("r","15");
             circle.setAttribute("fill","green");
             circle.style.transformOrigin = "50% 50%";
             circle.style.transform = "rotate("+deg+"deg) translate(0, -80px)";
             circleGroup.appendChild(circle);
+            circleGroup.appendChild(text);
         }
     }
     createCircle();

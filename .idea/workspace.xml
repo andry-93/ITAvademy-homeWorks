@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12eedb9c-1aae-4cb9-8277-dc3b6f6db1a1" name="Default Changelist" comment="v. 1">
-      <change afterPath="$PROJECT_DIR$/canvas/tennis_dom.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6_save/clockSvg.html" beforeDir="false" afterPath="$PROJECT_DIR$/6_save/clockSvg.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,11 +18,11 @@
     <session id="-1304092076">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="30" />
+          <entry key="project.closed" value="34" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.21" value="2" />
+          <entry key="project.open.time.21" value="3" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.26" value="1" />
@@ -32,12 +32,12 @@
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.31" value="2" />
           <entry key="project.open.time.32" value="1" />
-          <entry key="project.open.time.34" value="2" />
+          <entry key="project.open.time.34" value="3" />
           <entry key="project.open.time.35" value="3" />
           <entry key="project.open.time.36" value="3" />
-          <entry key="project.open.time.37" value="2" />
+          <entry key="project.open.time.37" value="3" />
           <entry key="project.open.time.38" value="2" />
-          <entry key="project.open.time.39" value="1" />
+          <entry key="project.open.time.39" value="2" />
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.43" value="1" />
@@ -48,7 +48,7 @@
           <entry key="project.open.time.60" value="1" />
           <entry key="project.open.time.61" value="2" />
           <entry key="project.open.time.64" value="1" />
-          <entry key="project.opened" value="40" />
+          <entry key="project.opened" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -69,14 +69,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="10885" />
+          <entry key="html" value="11049" />
           <entry key="js" value="2207" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="10885" />
+          <entry key="HTML" value="11049" />
           <entry key="JavaScript" value="2207" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
@@ -85,32 +85,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/6_save/clockSvg.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="37" column="89" lean-forward="true" selection-start-line="37" selection-start-column="89" selection-end-line="37" selection-end-column="89" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/canvas/tennis_dom.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/5_events/clock_dom/clock_dom_js.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="144" column="45" lean-forward="true" selection-start-line="144" selection-start-column="45" selection-end-line="144" selection-end-column="45" />
+            <state relative-caret-position="200">
+              <caret line="52" column="42" lean-forward="true" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -162,9 +141,9 @@
         <option value="$PROJECT_DIR$/3_class/drinks.js" />
         <option value="$PROJECT_DIR$/6_save/drinks.js" />
         <option value="$PROJECT_DIR$/6_save/drinks.html" />
-        <option value="$PROJECT_DIR$/6_save/clockSvg.html" />
         <option value="$PROJECT_DIR$/5_events/clock_dom/clock_dom_js.html" />
         <option value="$PROJECT_DIR$/canvas/tennis_dom.html" />
+        <option value="$PROJECT_DIR$/6_save/clockSvg.html" />
       </list>
     </option>
   </component>
@@ -174,7 +153,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-1" />
     <option name="y" value="55" />
     <option name="width" value="1346" />
@@ -192,6 +171,11 @@
             <path>
               <item name="hw" type="b2602c69:ProjectViewProjectNode" />
               <item name="hw" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hw" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hw" type="462c0819:PsiDirectoryNode" />
+              <item name="6_save" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hw" type="b2602c69:ProjectViewProjectNode" />
@@ -310,12 +294,16 @@
       <workItem from="1539258918380" duration="1765000" />
       <workItem from="1539339642051" duration="45000" />
       <workItem from="1539339762899" duration="1366000" />
-      <workItem from="1539388150784" duration="32755000" />
+      <workItem from="1539388150784" duration="33353000" />
+      <workItem from="1539512113002" duration="1430000" />
+      <workItem from="1539513641968" duration="2777000" />
+      <workItem from="1539544531236" duration="37000" />
+      <workItem from="1539547587150" duration="99000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204156000" />
+    <option name="totallyTimeSpent" value="209097000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -343,7 +331,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49925596" weight="0.29850745" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50074404" side_tool="true" weight="0.32838285" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50074404" side_tool="true" visible="true" weight="0.3283582" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -535,24 +523,21 @@
     <entry file="file://$PROJECT_DIR$/5_events/clock_dom/clock_dom_js.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
-          <caret line="144" column="45" lean-forward="true" selection-start-line="144" selection-start-column="45" selection-end-line="144" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/6_save/clockSvg.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="37" column="89" lean-forward="true" selection-start-line="37" selection-start-column="89" selection-end-line="37" selection-end-column="89" />
+          <caret line="144" column="45" selection-start-line="144" selection-start-column="45" selection-end-line="144" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/canvas/tennis_dom.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
+        <state relative-caret-position="1173">
           <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/6_save/clockSvg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="52" column="42" lean-forward="true" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
         </state>
       </provider>
     </entry>
