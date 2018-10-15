@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #area {
+            border: solid black 1px;
+            position: relative;
+            background-color: palegoldenrod;
+        }
+    </style>
+</head>
+<body>
+    <input type='button' value='Старт!' onclick='start()'>
+    <div style="text-align: center; width: 600px;"><span id="scoreLeft">0</span>:<span id="scoreRight">0</span></div>
+    <br /><br />
+    <svg id="area" width="600" height="400">
+        <circle id="IBall" cx="300" cy="200" r="12" fill="red"></circle>
+        <rect class="rl" width="10" height="120" x="0" y="10" fill="green"></rect>
+        <rect class="rr" width="10" height="120" x="590" y="270" fill="blue"></rect>
+    </svg>
+    <script>
+        const ballH = {
+            posX: 300,
+            posY: 200,
+            speedX: randomDiap(0.5,2),
+            speedY: randomDiap(0.5,2),
+            radius: 12,
+            update: function () {
+                const ballElem = document.getElementById('IBall');
+                ballElem.setAttribute ("cx", this.posX + "px");
+                ballElem.setAttribute ("cy", this.posY + "px");
+            }
+        };
+
+        const rl = {
+            posY: 10,
+            speedY: 1,
+            width: 10,
+            height: 120,
+            update: function () {
+                const rElem = document.querySelector('.rl');
+                rElem.setAttribute ("y", this.posY + "px");
+            }
+        };
+
+        const rr = {
+            posY: 270,
+            speedY: 1,
+            width: 10,
+            height: 120,
+            update: function () {
+                const rElem = document.querySelector('.rr');
+                rElem.setAttribute ("y", this.posY + "px");
+            }
+        };
+
+        let scoreLeft = document.getElementById('scoreLeft');
+        scoreLeft.innerText = '0';
+        let scoreRight = document.getElementById('scoreRight');
+        scoreRight.innerText = '0';
+
+        const areaH = {
+            width: 600,
+            height: 400
+        };
+
+        let pressLInterval,
+            pressRInterval,
+            pressedR = false,
+            pressedL = false,
+            pressedBall = false,
+            ranX = randomDiap(0,1),
+            ranY = randomDiap(0,1);
+
+        function randomDiap(n,m) {
+            return Math.floor(
+                Math.random()*(m-n+1)
+            )+n;
+        }
+
+        document.onkeydown = function(e) {
+            if (e.keyCode === 17) {
+                if (!pressedL) {
+                    pressLInterval = window.setInterval(function() {
+                        if ( !(rl.posY+rl.height>areaH.height) ) {
+                            rl.posY+=rl.speedY;
+                        }
+                        if ( rl.posY+rl.height>areaH.height ) {
+                            clearInterval(pressLInterval);
+                        }
+                        if ( rl.posY<0 ) {
+                            rl.speedY=-rl.speedY;
+                            rl.posY=0;
+                        }
+                        rl.update();
+                    },5);
+                }
+                pressedL = true;
+            } else if (e.keyCode === 16) {
+                if (!pressedL) {
+                    pressLInterval = window.setInterval(function () {
+                        if (rl.posY > 0) {
+                            rl.posY -= rl.speedY;
+                        }
+                        if (rl.posY < 0) {
+                            clearInterval(pressLInterval);
+                        }
+                        rl.update();
+                    }, 5)
+                }
+                pressedL = true;
+            }
+
+            if (e.keyCode === 40) {
+                if (!pressedR) {
+                    pressRInterval = window.setInterval(function() {
+                        if ( !(rr.posY+rr.height>areaH.height) ) {
+                            rr.posY+=rr.speedY;
+                        }
+                        if ( rr.posY+rr.height>areaH.height ) {
+                            clearInterval(pressRInterval);
+                        }
+                        if ( rr.posY<0 ) {
+                            rr.speedY=-rl.speedY;
+                            rr.posY=0;
+                        }
+                        rr.update();
+                    },5);
+                }
+                pressedR = true;
+            } else if (e.keyCode === 38) {
+                if (!pressedR) {
+                    pressRInterval = window.setInterval(function () {
+                        if (rr.posY > 0) {
+                            rr.posY -= rr.speedY;
+                        }
+                        if (rr.posY < 0) {
+                            clearInterval(pressRInterval);
+                        }
+                        rr.update();
+                    }, 5)
+                }
+                pressedR = true;
+            }
+        };
+
+        document.onkeyup = function(e) {
+            if ((e.keyCode === 17)||(e.keyCode === 16)) {
+                clearInterval(pressLInterval);
+                pressedL = false;
+            } else if ((e.keyCode === 40)||(e.keyCode === 38)) {
+                clearInterval(pressRInterval);
+                pressedR = false;
+            }
+        };
+
+        let intervalBall;
+
+        function start() {
+            // плавное движение - от 25 кадр/сек
+            if (!pressedBall) {
+                intervalBall = setInterval(tick, 5);
+            }
+            pressedBall = true;
+        }
+
+        function tick() {
+            if (ranX === 1) {
+                ballH.posX+=ballH.speedX;
+            } else {
+                ballH.posX-=ballH.speedX;
+            }
+            // вылетел ли мяч правее стены?
+            if ( (ballH.posX+ballH.radius)>(areaH.width-rr.width) ) {
+                if ((ballH.posY>rr.posY) && (ballH.posY+ballH.radius<rr.posY+rr.height)) {
+                    ballH.speedX=-ballH.speedX;
+                    ballH.posX=areaH.width-rr.width-ballH.radius;
+                }
+            }
+            if ( ballH.posX+ballH.radius>=areaH.width ) {
+                ballH.speedX=-ballH.speedX;
+                ballH.posX=areaH.width-ballH.radius;
+                pressedBall = false;
+                clearInterval(intervalBall);
+                scoreRight.innerHTML = +scoreRight.innerHTML+1;
+            }
+            // вылетел ли мяч левее стены?
+            if ( ballH.posX<(rl.width+ballH.radius) ) {
+                if ((ballH.posY>rl.posY) && (ballH.posY+ballH.radius<rl.posY+rl.height)) {
+                    ballH.speedX=-ballH.speedX;
+                    ballH.posX=rl.width+ballH.radius;
+                }
+                if ( ballH.posX<ballH.radius ) {
+                    ballH.speedX=-ballH.speedX;
+                    ballH.posX=ballH.radius;
+                    pressedBall = false;
+                    clearInterval(intervalBall);
+                    scoreLeft.innerHTML = +scoreLeft.innerHTML+1;
+                }
+            }
+            if (ranY === 1) {
+                ballH.posY+=ballH.speedY;
+            } else {
+                ballH.posY-=ballH.speedY;
+            }
+            // вылетел ли мяч ниже пола?
+            if ( ballH.posY+ballH.radius>areaH.height ) {
+                ballH.speedY=-ballH.speedY;
+                ballH.posY=areaH.height-ballH.radius;
+            }
+            // вылетел ли мяч выше потолка?
+            if ( ballH.posY<ballH.radius ) {
+                ballH.speedY=-ballH.speedY;
+                ballH.posY=ballH.radius;
+            }
+            ballH.update();
+        }
+
+        ballH.update();
+        rl.update();
+        rr.update();
+    </script>
+</body>
+</html>

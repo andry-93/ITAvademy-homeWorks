@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12eedb9c-1aae-4cb9-8277-dc3b6f6db1a1" name="Default Changelist" comment="v. 1">
+      <change afterPath="$PROJECT_DIR$/canvas/tennis_svg.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/6_save/clockSvg.html" beforeDir="false" afterPath="$PROJECT_DIR$/6_save/clockSvg.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,12 +24,12 @@
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.21" value="3" />
           <entry key="project.open.time.23" value="1" />
-          <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.25" value="2" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.29" value="1" />
-          <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.30" value="2" />
           <entry key="project.open.time.31" value="2" />
           <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.34" value="3" />
@@ -48,35 +48,35 @@
           <entry key="project.open.time.60" value="1" />
           <entry key="project.open.time.61" value="2" />
           <entry key="project.open.time.64" value="1" />
-          <entry key="project.opened" value="44" />
+          <entry key="project.opened" value="46" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cd" value="1" />
-          <entry key="html" value="33" />
-          <entry key="js" value="28" />
+          <entry key="html" value="37" />
+          <entry key="js" value="29" />
           <entry key="ts" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="33" />
-          <entry key="JavaScript" value="28" />
+          <entry key="HTML" value="37" />
+          <entry key="JavaScript" value="29" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="TypeScript" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="11049" />
+          <entry key="html" value="11269" />
           <entry key="js" value="2207" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="11049" />
+          <entry key="HTML" value="11269" />
           <entry key="JavaScript" value="2207" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
@@ -85,11 +85,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/6_save/clockSvg.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="52" column="42" lean-forward="true" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
+            <state relative-caret-position="552">
+              <caret line="24" column="60" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/canvas/tennis_dom.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5681">
+              <caret line="247" column="20" selection-start-line="191" selection-start-column="8" selection-end-line="247" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/canvas/tennis_svg.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="175" column="55" selection-start-line="175" selection-start-column="55" selection-end-line="175" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -140,10 +158,11 @@
         <option value="$PROJECT_DIR$/6_save/anketa.html" />
         <option value="$PROJECT_DIR$/3_class/drinks.js" />
         <option value="$PROJECT_DIR$/6_save/drinks.js" />
-        <option value="$PROJECT_DIR$/6_save/drinks.html" />
         <option value="$PROJECT_DIR$/5_events/clock_dom/clock_dom_js.html" />
         <option value="$PROJECT_DIR$/canvas/tennis_dom.html" />
         <option value="$PROJECT_DIR$/6_save/clockSvg.html" />
+        <option value="$PROJECT_DIR$/6_save/drinks.html" />
+        <option value="$PROJECT_DIR$/canvas/tennis_svg.html" />
       </list>
     </option>
   </component>
@@ -165,6 +184,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,18 +195,12 @@
             <path>
               <item name="hw" type="b2602c69:ProjectViewProjectNode" />
               <item name="hw" type="462c0819:PsiDirectoryNode" />
-              <item name="6_save" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hw" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hw" type="462c0819:PsiDirectoryNode" />
               <item name="canvas" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -299,11 +313,13 @@
       <workItem from="1539513641968" duration="2777000" />
       <workItem from="1539544531236" duration="37000" />
       <workItem from="1539547587150" duration="99000" />
+      <workItem from="1539602095294" duration="3981000" />
+      <workItem from="1539606671744" duration="819000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209097000" />
+    <option name="totallyTimeSpent" value="213897000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -506,20 +522,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/6_save/drinks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="102" column="9" lean-forward="true" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/6_save/drinks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="24" column="37" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/5_events/clock_dom/clock_dom_js.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
@@ -527,17 +529,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/canvas/tennis_dom.html">
+    <entry file="file://$PROJECT_DIR$/6_save/drinks.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+        <state relative-caret-position="338">
+          <caret line="113" column="5" lean-forward="true" selection-start-line="113" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/6_save/drinks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="24" column="37" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/6_save/clockSvg.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="52" column="42" lean-forward="true" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
+        <state relative-caret-position="552">
+          <caret line="24" column="60" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas/tennis_dom.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5681">
+          <caret line="247" column="20" selection-start-line="191" selection-start-column="8" selection-end-line="247" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas/tennis_svg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="175" column="55" selection-start-line="175" selection-start-column="55" selection-end-line="175" selection-end-column="55" />
         </state>
       </provider>
     </entry>
