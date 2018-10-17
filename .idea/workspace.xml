@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12eedb9c-1aae-4cb9-8277-dc3b6f6db1a1" name="Default Changelist" comment="v. 1">
+      <change afterPath="$PROJECT_DIR$/7_MVC/CLOCK/TClock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7_MVC/CLOCK/TClockControllerButtons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7_MVC/CLOCK/TClockViewDOM.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7_MVC/CLOCK/TClockViewSVG.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7_MVC/CLOCK/clock.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7_MVC/MVCtutorial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/6_save/drinks.html" beforeDir="false" afterPath="$PROJECT_DIR$/6_save/drinks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6_save/clockSvg.html" beforeDir="false" afterPath="$PROJECT_DIR$/6_save/clockSvg.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,12 +25,14 @@
     <session id="-1304092076">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="35" />
+          <entry key="project.closed" value="37" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.21" value="3" />
           <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.25" value="2" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.27" value="1" />
@@ -48,62 +57,44 @@
           <entry key="project.open.time.60" value="1" />
           <entry key="project.open.time.61" value="2" />
           <entry key="project.open.time.64" value="1" />
-          <entry key="project.opened" value="47" />
+          <entry key="project.opened" value="49" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cd" value="1" />
-          <entry key="html" value="38" />
-          <entry key="js" value="31" />
+          <entry key="gitignore" value="1" />
+          <entry key="html" value="42" />
+          <entry key="js" value="37" />
           <entry key="ts" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="38" />
-          <entry key="JavaScript" value="31" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="HTML" value="42" />
+          <entry key="JavaScript" value="37" />
+          <entry key="PLAIN_TEXT" value="2" />
           <entry key="TypeScript" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="11685" />
-          <entry key="js" value="2222" />
+          <entry key="html" value="11831" />
+          <entry key="js" value="3334" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="11685" />
-          <entry key="JavaScript" value="2222" />
+          <entry key="HTML" value="11831" />
+          <entry key="JavaScript" value="3334" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/6_save/drinks.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="51" column="51" lean-forward="true" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/6_save/drinks.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -119,6 +110,7 @@
       <find>event</find>
       <find>relative</find>
       <find>ran</find>
+      <find>transform</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -150,10 +142,16 @@
         <option value="$PROJECT_DIR$/3_class/drinks.js" />
         <option value="$PROJECT_DIR$/5_events/clock_dom/clock_dom_js.html" />
         <option value="$PROJECT_DIR$/canvas/tennis_dom.html" />
-        <option value="$PROJECT_DIR$/6_save/clockSvg.html" />
         <option value="$PROJECT_DIR$/canvas/tennis_svg.html" />
         <option value="$PROJECT_DIR$/6_save/drinks.js" />
         <option value="$PROJECT_DIR$/6_save/drinks.html" />
+        <option value="$PROJECT_DIR$/7_MVC/MVCtutorial.html" />
+        <option value="$PROJECT_DIR$/7_MVC/CLOCK/TClock.js" />
+        <option value="$PROJECT_DIR$/6_save/clockSvg.html" />
+        <option value="$PROJECT_DIR$/7_MVC/CLOCK/clock.html" />
+        <option value="$PROJECT_DIR$/7_MVC/CLOCK/TClockControllerButtons.js" />
+        <option value="$PROJECT_DIR$/7_MVC/CLOCK/TClockViewSVG.js" />
+        <option value="$PROJECT_DIR$/7_MVC/CLOCK/TClockViewDOM.js" />
       </list>
     </option>
   </component>
@@ -163,9 +161,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="55" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="103" />
+    <option name="y" value="137" />
     <option name="width" value="1346" />
     <option name="height" value="698" />
   </component>
@@ -175,6 +173,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -182,21 +181,10 @@
               <item name="hw" type="b2602c69:ProjectViewProjectNode" />
               <item name="hw" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="hw" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hw" type="462c0819:PsiDirectoryNode" />
-              <item name="6_save" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hw" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hw" type="462c0819:PsiDirectoryNode" />
-              <item name="canvas" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -207,6 +195,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\ITAcademy\hw\7_MVC\CLOCK" />
       <recent name="D:\project\ITAcademy\hw\6_save" />
     </key>
   </component>
@@ -311,12 +300,14 @@
       <workItem from="1539547587150" duration="99000" />
       <workItem from="1539602095294" duration="3981000" />
       <workItem from="1539606671744" duration="955000" />
-      <workItem from="1539682620203" duration="6891000" />
+      <workItem from="1539682620203" duration="7096000" />
+      <workItem from="1539774858644" duration="272000" />
+      <workItem from="1539775177725" duration="28426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220924000" />
+    <option name="totallyTimeSpent" value="249827000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -328,23 +319,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="55" width="1346" height="698" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1353211" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19791667" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32985073" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49925596" weight="0.3283582" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49925596" weight="0.28507462" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39933994" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32838285" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49925596" weight="0.3283582" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49925596" weight="0.29850745" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50074404" side_tool="true" visible="true" weight="0.3583062" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50074404" side_tool="true" weight="0.3283582" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -519,13 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/5_events/clock_dom/clock_dom_js.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="144" column="45" selection-start-line="144" selection-start-column="45" selection-end-line="144" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/canvas/tennis_svg.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -540,24 +523,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/6_save/clockSvg.html">
+    <entry file="file://$PROJECT_DIR$/6_save/drinks.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="24" column="60" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="60" />
+        <state relative-caret-position="190">
+          <caret line="51" column="51" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/6_save/drinks.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
-          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="19" />
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/6_save/drinks.html">
+    <entry file="file://$PROJECT_DIR$/7_MVC/CLOCK/clock.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="51" column="51" lean-forward="true" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
+        <state relative-caret-position="223">
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5_events/clock_dom/clock_dom_js.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2530">
+          <caret line="119" column="73" selection-start-line="119" selection-start-column="57" selection-end-line="119" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/6_save/clockSvg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/7_MVC/MVCtutorial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="73" column="17" lean-forward="true" selection-start-line="67" selection-start-column="16" selection-end-line="73" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/7_MVC/CLOCK/TClock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/7_MVC/CLOCK/TClockViewSVG.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/7_MVC/CLOCK/TClockViewDOM.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/7_MVC/CLOCK/TClockControllerButtons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
         </state>
       </provider>
     </entry>

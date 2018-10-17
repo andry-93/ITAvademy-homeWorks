@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>x</title>
+</head>
+<body>
+<script>
+    class Model {
+        constructor(timezone) {
+            this.timezone = timezone; // TODO: добавить зоны
+            this.changeListener = null;
+            // модель предоставляет поле date для чтения извне
+            this.date = new Date();
+            // модель обновляет себя
+            setInterval(() => {
+                this.date = new Date();
+                if (typeof (this.changeListenerCallback) === 'function') {
+                    // и нотифицирует слушателя путем вызова
+                    // его функции обратного вызова
+                    this.changeListenerCallback();
+                }
+            }, 1000);
+        }
+
+        setChangeListener(changeListener) {
+            this.changeListenerCallback = changeListener;
+        }
+    }
+
+    class View {
+        constructor(root) {
+            this.root = root;
+            this.element = null;
+            this.checkbox = null;
+            this.checkedChangeHandler = null;
+        }
+
+        render(model) {
+            // представление создает dom элементы в первый раз
+            if (!this.element) {
+                this.element = document.createElement('div');
+                this.checkbox = document.createElement('input');
+                this.checkbox.type = 'checkbox';
+                this.checkbox.checked = true;
+                this.checkbox.addEventListener('change',
+                    e => this.checkedChangeHandler(e.target.checked));
+                this.root.appendChild(this.checkbox);
+                this.root.appendChild(this.element);
+            }
+            // и обновляет время по данным из модели
+            this.element.textContent = model.date;
+        }
+
+        setChangeHandler(handler) {
+            this.checkedChangeHandler = handler;
+        }
+    }
+
+    class Controller {
+        constructor(model, view) {
+            this.model = model;
+            this.view = view;
+            // контроллер при снятии флажка в представлении
+            // перестает слушать изменения модели,
+            // а при установке - продолжает
+            this.view.setChangeHandler(
+                checked => {
+                    if (checked) {
+                        this.registerModelHandler();
+                    } else {
+                        this.model.setChangeListener(null);
+                    }
+                }
+            );
+            this.registerModelHandler();
+        }
+
+        registerModelHandler() {
+            this.model.setChangeListener(
+                () => this.handleModelChange());
+            this.handleModelChange();
+        }
+
+        handleModelChange() {
+            // при вызове функции обратного вызова
+            // контроллер перерисовывает представление
+            this.view.render(this.model);
+        }
+    }
+
+    const model = new Model();
+    const view = new View(document.body);
+    new Controller(model, view);
+
+    const model2 = new Model();
+    const view2 = new View(document.body);
+    new Controller(model2, view2);
+
+    const model3 = new Model();
+    const view3 = new View(document.body);
+    new Controller(model3, view3);
+
+</script>
+</body>
+</html>

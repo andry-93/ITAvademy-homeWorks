@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Часы MVC</title>
+</head>
+<body>
+    <script src="TClock.js"></script>
+    <script src="TClockViewSVG.js"></script>
+    <script src="TClockViewDOM.js"></script>
+    <script src="TClockControllerButtons.js"></script>
+    <script>
+        const model = new TClock();
+        const view = new TClockViewSVG(document.body);
+        new TClockControllerButtons(model, view);
+
+        const model2 = new TClock();
+        const view2 = new TClockViewDOM(document.body);
+        new TClockControllerButtons(model2, view2);
+    </script>
+</body>
+</html>
