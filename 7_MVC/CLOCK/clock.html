@@ -10,11 +10,11 @@
     <script src="TClockViewDOM.js"></script>
     <script src="TClockControllerButtons.js"></script>
     <script>
-        const model = new TClock();
+        const model = new TClock(0);
         const view = new TClockViewSVG(document.body);
         new TClockControllerButtons(model, view);
 
-        const model2 = new TClock();
+        const model2 = new TClock(3);
         const view2 = new TClockViewDOM(document.body);
         new TClockControllerButtons(model2, view2);
     </script>

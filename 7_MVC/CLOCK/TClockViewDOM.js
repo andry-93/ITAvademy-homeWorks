@@ -8,11 +8,9 @@ class TClockViewDOM {
         this.hour = null;
         this.min = null;
         this.sec = null;
-        this.checkbox = null;
         this.start = null;
         this.stop = null;
-        this.stopEvent = false;
-        this.checkedChangeHandler = null;
+        this.startedChangeHandler = null;
     }
 
     static r(el, deg) {
@@ -35,14 +33,9 @@ class TClockViewDOM {
             this.start.value = 'старт';
             this.stop.value = 'стоп';
             this.start.addEventListener('click',
-                e => this.stopEvent = false);
+                e => this.startedChangeHandler(true));
             this.stop.addEventListener('click',
-                e => this.stopEvent = true);
-            this.checkbox = document.createElement('input');
-            this.checkbox.type = 'checkbox';
-            this.checkbox.checked = true;
-            this.checkbox.addEventListener('change',
-                e => this.checkedChangeHandler(e.target.checked));
+                e => this.startedChangeHandler(false));
             this.clock = document.createElement('div');
             this.clock.style.width = '200px';
             this.clock.style.height = '200px';
@@ -53,7 +46,6 @@ class TClockViewDOM {
             this.divOuter.appendChild(this.divInner);
             this.divInner.appendChild(this.stop);
             this.divInner.appendChild(this.start);
-            this.divInner.appendChild(this.checkbox);
             this.divOuter.appendChild(this.clock);
             for (let i = 1, deg = 30; i <= 12; i++, deg += 30) {
                 this.circle = document.createElement('div');
@@ -103,6 +95,6 @@ class TClockViewDOM {
     }
 
     setChangeHandler(handler) {
-        this.checkedChangeHandler = handler;
+        this.startedChangeHandler = handler;
     }
 }

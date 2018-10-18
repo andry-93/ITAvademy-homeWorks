@@ -10,11 +10,9 @@ class TClockViewSVG {
         this.hour = null;
         this.min = null;
         this.sec = null;
-        this.checkbox = null;
         this.start = null;
         this.stop = null;
-        this.stopEvent = false;
-        this.checkedChangeHandler = null;
+        this.startedChangeHandler = null;
     }
 
     static r(el, deg) {
@@ -34,14 +32,9 @@ class TClockViewSVG {
             this.start.value = 'старт';
             this.stop.value = 'стоп';
             this.start.addEventListener('click',
-                e => this.stopEvent = false);
+                e => this.startedChangeHandler(true));
             this.stop.addEventListener('click',
-                e => this.stopEvent = true);
-            this.checkbox = document.createElement('input');
-            this.checkbox.type = 'checkbox';
-            this.checkbox.checked = true;
-            this.checkbox.addEventListener('change',
-                e => this.checkedChangeHandler(e.target.checked));
+                e => this.startedChangeHandler(false));
             this.svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
             this.svg.style.display = 'block';
             this.clock = document.createElementNS('http://www.w3.org/2000/svg','circle');
@@ -55,7 +48,6 @@ class TClockViewSVG {
             this.divOuter.appendChild(this.divInner);
             this.divInner.appendChild(this.stop);
             this.divInner.appendChild(this.start);
-            this.divInner.appendChild(this.checkbox);
             this.divOuter.appendChild(this.svg);
             this.svg.appendChild(this.clock);
             for (let i = 1, deg = 30; i <= 12; i++, deg += 30) {
@@ -110,6 +102,6 @@ class TClockViewSVG {
     }
 
     setChangeHandler(handler) {
-        this.checkedChangeHandler = handler;
+        this.startedChangeHandler = handler;
     }
 }

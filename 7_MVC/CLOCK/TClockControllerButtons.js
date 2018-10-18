@@ -6,8 +6,8 @@ class TClockControllerButtons {
         // перестает слушать изменения модели,
         // а при установке - продолжает
         this.view.setChangeHandler(
-            checked => {
-                if (checked) {
+            started => {
+                if (started) {
                     this.registerModelHandler();
                 } else {
                     this.model.setChangeListener(null);
