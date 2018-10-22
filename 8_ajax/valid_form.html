@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>VALID_FORM</title>
+</head>
+<body>
+<div class="result"></div>
+<form method="POST" action="http://fe.it-academy.by/TestForm.php" target="_blank">
+    <table class="SNoBorders">
+        <tbody><tr><td>Разработчики:</td><td><input type="text" name="author" style="width: 453px"></td></tr>
+        <tr><td>Название сайта:</td><td><input type="text" name="title" style="width: 453px"></td></tr>
+        <tr><td>URL сайта:</td><td><input type="text" name="url" style="width: 300px"></td></tr>
+        <tr><td>Дата запуска сайта:</td><td><input type="text" name="startdate" style="width: 80px"></td></tr>
+        <tr><td>Посетителей в сутки:</td><td><input type="text" name="persons" style="width: 80px"></td></tr>
+        <tr><td>E-mail для связи:</td><td><input type="text" name="email" style="width: 200px"></td></tr>
+        <tr><td>Рубрика каталога:</td><td style="padding-left: 1px">
+            <select name="rubric" style="width: 204px; margin-left: 2px">
+                <option value="1">здоровье</option>
+                <option value="2">домашний уют</option>
+                <option value="3" selected="">бытовая техника</option>
+            </select>
+        </td></tr>
+        <tr><td>Размещение:</td><td style="padding: 2px 0 2px 0">
+            <input type="radio" name="public" checked value="1"><span class="SRadio8a">бесплатное</span>
+            <input type="radio" name="public" value="2"><span class="SRadio8a">платное</span>
+            <input type="radio" name="public" value="3"><span class="SRadio8a">VIP</span>
+        </td></tr>
+        <tr><td style="padding: 2px 0 3px 3px">Разрешить&nbsp;отзывы:</td><td><input type="checkbox" name="comments"></td></tr>
+        <tr><td colspan="2">Описание сайта:<br>
+            <textarea name="article" style="width: 608px; height: 50px"></textarea></td></tr>
+        <tr><td><input type="submit" value="Опубликовать"></td><td></td></tr>
+        </tbody></table>
+</form>
+<script>
+    window.onload = function() {
+        let text = document.querySelectorAll("form input[type=\"text\"], form textarea"),
+            submit = document.querySelectorAll("form input[type=\"submit\"]");
+        submit[0].addEventListener('click', function (e) {
+            let erEl = [],
+                error = false;
+            for (let i = 0; i < text.length; i++) {
+                let el = document.createElement('span');
+                let parent = text[i].parentNode;
+                if (parent.lastChild.className === "error") {
+                    parent.removeChild(parent.lastChild)
+                }
+                if ((text[i].value === '')&&(parent.lastChild.className !== "error")) {
+                    erEl.push(el);
+                    el.className = "error";
+                    el.innerHTML="<br>Значение не введено";
+                    el.style = "color: red";
+                    parent.appendChild(el);
+                }
+            }
+            if (erEl.length > 0) {
+                error = true;
+                erEl[0].parentNode.firstChild.focus();
+            } else error = false;
+            if (error) {
+                submit[0].type = 'button';
+            } else {
+                submit[0].type = 'button';
+                submit[0].onclick = function () {
+                    let params = '';
+                    for (let i = 0; i < text.length; i++) {
+                        if (i != text.length-1) {
+                            params += text[i].getAttribute('name')+'='+text[i].value + '&';
+                        } else {
+                            params += text[i].getAttribute('name')+'='+text[i].value
+                        }
+                    }
+                    ajaxPost(params);
+                }
+                //submit[0].type = 'submit';
+            }
+            erEl.splice(0,erEl.length);
+        });
+        for (let i = 0; i < text.length; i++) {
+            let el = document.createElement('span');
+            text[i].addEventListener('blur', function (e) {
+                let parent = this.parentNode;
+                if (parent.lastChild.className === "error") {
+                    parent.removeChild(parent.lastChild)
+                }
+                if ((this.value === '')&&(parent.lastChild.className !== "error")) {
+                    el.className = "error";
+                    el.innerHTML="<br>Значение не введено";
+                    el.style = "color: red";
+                    parent.appendChild(el);
+                }
+            });
+        }
+    };
+
+    function ajaxPost(params) {
+        var request = new XMLHttpRequest();
+
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {
+                /*if (request.responseText == '1') {
+                    document.querySelector('.result').innerHTML = 'Ваша форма отправлена!';
+                } else {
+                    document.querySelector('.result').innerHTML = request.responseText;
+                }*/
+                document.querySelector('.result').innerHTML = 'Ваша форма отправлена!';
+
+            }
+        };
+
+        request.open('POST', 'http://fe.it-academy.by/TestForm.php');
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        request.send(params);
+    }
+</script>
+</body>
+</html>
