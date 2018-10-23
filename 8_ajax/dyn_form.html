@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Динамические формы</title>
+    <title>x</title>
 </head>
 <body>
-
 <script>
     function createForm () {
         let el = document.body;
@@ -91,37 +90,47 @@
                 input.name = mas[i]['name'];
                 memo.name = mas[i]['name'];
             }
-            br = document.createElement('br');
+            let br = document.createElement('br');
 
             form.appendChild(br);
-            console.log(mas[i].label);
         }
     }
-    let formDef1=
-        [
-            {label:'Название сайта:',kind:'longtext',name:'sitename'},
-            {label:'URL сайта:',kind:'longtext',name:'siteurl'},
-            {label:'Посетителей в сутки:',kind:'number',name:'visitors'},
-            {label:'E-mail для связи:',kind:'shorttext',name:'email'},
-            {label:'Рубрика каталога:',kind:'combo',name:'division',
-                variants:[{text:'здоровье',value:1},{text:'домашний уют',value:2},{text:'бытовая техника',value:3}]},
-            {label:'Размещение:',kind:'radio',name:'payment',
-                variants:[{text:'бесплатное',value:1},{text:'платное',value:2},{text:'VIP',value:3}]},
-            {label:'Разрешить отзывы:',kind:'check',name:'votes'},
-            {label:'Описание сайта:',kind:'memo',name:'description'},
-            {label:'Опубликовать:',kind:'submit'},
-        ];
+    // Создайте новый файл с именем data.json
+    // и положите рядом с html
+    /*
+    {
+        "result": {
+            "message": "hello"
+        }
+    }
+    */
+    'use strict'
+    // AJAX запрос с обработкой ошибки загрузки файла
+    // средствами нативного JavaScript
+    function reqListener() {
+        if (this.status === 200) { // если запрос выполнен успешно, то статус 200 OK
+            const response = JSON ? JSON.parse(this.responseText) : eval("(" + this.responseText + ")");
+            innerForm(createForm(), response['form1']);
+            innerForm(createForm(), response['form2']);
+        }
+        else { // не 200 - значит вывести статус и текст ошибки
+            document.body.innerHTML = this.status + ' ' + this.statusText;
+        }
+    }
 
-    let formDef2=
-        [
-            {label:'Фамилия:',kind:'longtext',name:'lastname'},
-            {label:'Имя:',kind:'longtext',name:'firstname'},
-            {label:'Отчество:',kind:'longtext',name:'secondname'},
-            {label:'Возраст:',kind:'number',name:'age'},
-            {label:'Зарегистрироваться:',kind:'submit'},
-        ];
-    innerForm(createForm(), formDef1);
-    innerForm(createForm(), formDef2);
+    function onreadystatechangeListener() {
+        // можно этапы запроса узнать через readyState
+        // https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest
+        console.log(this.readyState);
+    }
+
+    var oReq = new XMLHttpRequest();
+    oReq.onload = reqListener;
+    oReq.onreadystatechange = onreadystatechangeListener;
+    // открыть соединение
+    oReq.open("get", "data.json", true);
+    // отправить запрос
+    oReq.send();
 </script>
 </body>
 </html>
